@@ -1,6 +1,6 @@
 
 
-
+import AppKit
 import os
 from PIL import Image
 import pyautogui as gui
@@ -17,7 +17,6 @@ if __name__ == "__main__":
     # 事前準備
     tmp_img_path = 'res/screen_tmp.png'
     os.makedirs('res', exist_ok=True)
-
 
     # 座標の大きさにズレがあるっぽいので、0~1 の相対座標にしてみる。
 
@@ -87,4 +86,8 @@ if __name__ == "__main__":
     # ファイルに保存
     with open('res/ocr.txt', 'w') as f:
         f.write(txt)
+
+    # 削除
+    import shutil
+    shutil.rmtree('res')
 
